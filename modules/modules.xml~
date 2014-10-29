@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<modules-root>
+   <mod id="http_parser">
+      <in></in>
+      <out></out>
+   </mod>
+</modules-root>

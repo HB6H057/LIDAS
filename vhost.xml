@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vhost>
+   <host status="on">
+      <hostname>127.0.0.1</hostname>
+      <path>/srv/www/htdocs</path>
+      <frontpage>index.html</frontpage>
+      <proxy-pass>
+         <active match="\.(php|cgi|jsp)$" cache="off">default</active>
+      </proxy-pass>
+   </host>
+</vhost>

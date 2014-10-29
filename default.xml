@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<default>
+   <!--- Port to listen -->
+   <port>8080</port>
+
+   <!-- The number of listener processes-->
+   <listener>4</listener>
+
+   <!--- The max connection for each listen process.If you want more than 1024 
+   connections to be listened on linux platform,you must change system
+   limits first-->
+   <connect>1000</connect>
+
+   <!--- The timeout of http keep-alive -->
+   <keep-alive type="s">10</keep-alive>
+
+   <!--Maximium thread for each listener process-->
+   <max-thread>100</max-thread>
+
+   <cache-options>
+      <mem-cache max="200M" timeout="2m"></mem-cache>
+      <disk-cache status="on" max="10G" timeout="30m"></disk-cache>
+   </cache-options>
+</default>

@@ -1,0 +1,75 @@
+#!/bin/sh
+
+HERE=$(pwd)
+modeoptions="normal"
+proc=""
+
+function startmain {
+   if [ -n "$LD_LIBRARY_PATH" ]
+   then 
+      LD_LIBRARY_PATH="$HERE/lib:$LD_LIBRARY_PATH"
+   else 
+      LD_LIBRARY_PATH="$HERE/lib"
+   fi
+   
+   export LD_LIBRARY_PATH
+   
+   ./lida-main $modeoptions
+}
+
+function stopservice {
+   $proc = $(ps -e | gawk '/lida-main/{ print $1 }')
+   
+   if [ -z $proc ]
+   then
+      echo "lida did not even start"
+      exit 1
+   fi
+   
+   kill $proc
+   
+   echo "Waiting for stop..."
+   sleep 3
+   
+   if [ -z $(ps -e | grep lida-main) ]
+   then
+      echo "lida stopped"
+   else 
+      echo "Cannot stop now. Try again later"
+      exit 1 
+   fi
+}
+
+if (($# < 1))
+then 
+   echo "Usage: rclida start/stop"
+   exit 1
+fi
+   
+if [ $1 = "start" ]
+then 
+   startmain
+
+elif [ $1 = "start-thread" ]
+then
+   $modeoptions="thread"
+   startmain
+   
+elif [ $1 = "start-mini" ]
+then
+   $modeoptions="mini"
+   startmain
+
+elif [ $1 = "stop" ]
+then
+   stopservice
+
+elif [ $1 = "restart" ]
+then 
+   stopservice
+   startmain
+   
+else
+   echo "Invaild command"
+   exit 1   
+fi

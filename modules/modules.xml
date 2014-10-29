@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<onload>
+  <module name="http_parser">
+    <read>true</read>
+    <write>false</write>
+  </module>
+  <module name="filter_output">
+    <read>true</read>
+    <write>true</write>
+  </module>
+  <module name="virtualhost">
+    <read>true</read>
+    <write>true</write>
+  </module>
+</onload>

@@ -1,0 +1,13 @@
+# include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   fp = fopen ("config.txt", "r");
+   char *name, *sex;
+   fscanf (fp, "name=%s\nsex=%s", name, sex);
+   puts (name);
+   puts (sex);
+
+   return 1;
+}

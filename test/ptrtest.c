@@ -1,0 +1,5 @@
+
+void steam ()
+{
+   puts (a);
+}

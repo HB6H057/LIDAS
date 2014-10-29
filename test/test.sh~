@@ -1,0 +1,5 @@
+#!/bin/bash
+
+proc=$(ps -e | gawk '/firefox/{ print $1 }')
+
+echo $proc

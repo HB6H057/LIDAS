@@ -1,0 +1,8 @@
+#!/bin/sh
+a="Robert"
+b="Simon"
+ 
+if [ $a != $b ]
+then
+    echo "Equals"
+fi

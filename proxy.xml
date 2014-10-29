@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+   <proxy id="default">
+      <node weight="12">127.0.0.1:1992</node>
+      <node weight="12">127.0.0.1:3456</node>
+      <node weight="12">127.0.0.1:1234</node>
+   </proxy>
+</root>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<default>
+   <host>
+      <hostname>127.0.0.1:8080</hostname>
+      <port>80</port>
+      <path>/srv/www/htdocs</path>
+      <frontpage>index.html</frontpage>
+   </host>
+</default>
